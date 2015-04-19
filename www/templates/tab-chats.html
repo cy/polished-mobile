@@ -1,0 +1,21 @@
+<ion-view view-title="Polished">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="manicure in manicures" type="item-text-wrap" href="#/tab/chats/{{manicure.id}}">
+        <img ng-src="{{staticUrl}}{{manicure.photo}}">
+        <h2>{{manicure.name}}</h2>
+        <div data-ng-repeat="polish in manicure.polishes">
+          {{ polish.brand }}
+              <span data-ng-repeat="color in polish.colors">
+                  <div style="height:20px; width: 20px; background-color: {{color}}; border: 1px solid grey; margin-right: 2px; display: inline-flex" class=""></div>
+              </span>
+        </div>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
